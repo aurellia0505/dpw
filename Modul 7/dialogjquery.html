@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dialog Modern jQuery UI</title>
+
+    <!-- jQuery & jQuery UI -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            width: 320px;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        p {
+            color: #666;
+        }
+
+        /* Tombol utama */
+        #buka-dialog {
+            background: #4a90e2;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        #buka-dialog:hover {
+            background: #357abd;
+        }
+
+        /* Custom Dialog */
+        .ui-dialog {
+            border-radius: 12px !important;
+            overflow: hidden;
+        }
+
+        .ui-dialog-titlebar {
+            background: #4a90e2;
+            color: white;
+            border: none;
+        }
+
+        .ui-dialog-titlebar-close {
+            display: none; /* sembunyikan tombol X */
+        }
+
+        .ui-dialog-buttonpane button {
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .ui-dialog-buttonpane button:first-child {
+            background: #2ecc71;
+            color: white;
+        }
+
+        .ui-dialog-buttonpane button:last-child {
+            background: #e74c3c;
+            color: white;
+        }
+
+        .ui-dialog-buttonpane button:hover {
+            opacity: 0.9;
+        }
+
+        #hasil {
+            margin-top: 15px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Dialog Interaktif</h2>
+    <p>Klik tombol untuk menampilkan dialog modern</p>
+
+    <button id="buka-dialog">Tampilkan Dialog</button>
+
+    <p id="hasil"></p>
+</div>
+
+<!-- Dialog -->
+<div id="kotak-dialog" title="Konfirmasi Sistem">
+    <p>Apakah Anda ingin melanjutkan proses ini?</p>
+</div>
+
+<script>
+$(document).ready(function() {
+
+    $("#kotak-dialog").dialog({
+        autoOpen: false,
+        modal: true,
+        show: { effect: "fade", duration: 300 },
+        hide: { effect: "fade", duration: 300 },
+
+        buttons: {
+            "Ya, Lanjut": function() {
+                $("#hasil").text("Anda memilih melanjutkan 👍");
+                $(this).dialog("close");
+            },
+            "Batal": function() {
+                $("#hasil").text("Anda membatalkan ❌");
+                $(this).dialog("close");
+            }
+        }
+    });
+
+    $("#buka-dialog").click(function() {
+        $("#kotak-dialog").dialog("open");
+    });
+
+});
+</script>
+
+</body>
+</html>

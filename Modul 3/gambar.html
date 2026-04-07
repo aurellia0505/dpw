@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Galeri Gambar</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #eef2f3;
+        }
+
+        header {
+            background: linear-gradient(45deg, teal, darkcyan);
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer {
+            background: teal;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        nav {
+            flex: 1;
+            min-width: 200px;
+            background: white;
+            padding: 15px;
+            box-shadow: 2px 0 8px rgba(0,0,0,0.1);
+        }
+
+        nav ul { list-style: none; padding: 0; }
+
+        nav ul li { margin: 10px 0; }
+
+        nav a {
+            text-decoration: none;
+            color: black;
+            display: block;
+            padding: 8px;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background: teal;
+            color: white;
+        }
+
+        article {
+            flex: 3;
+            padding: 20px;
+        }
+
+        /* GALERI */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .card p {
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+        }
+
+        @media(max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h2>✨ Galeri Gambar Modern</h2>
+</header>
+
+<div class="container">
+
+<nav>
+    <ul>
+        <li><a href="#"> Home</a></li>
+        <li><a href="#"> Gambar</a></li>
+        <li><a href="#"> Video</a></li>
+        <li><a href="#"> Audio</a></li>
+        <li><a href="#"> Form</a></li>
+    </ul>
+</nav>
+
+<article>
+    <h3>Galeri Random</h3>
+
+    <div class="gallery">
+        <div class="card">
+            <img src="foto/gambar1.jpeg">
+            <p>Gambar 1</p>
+        </div>
+
+        <div class="card">
+            <img src="foto/gambar2.jpeg">
+            <p>Gambar 2</p>
+        </div>
+
+        <div class="card">
+            <img src="foto/gambar3.jpeg ">
+            <p>Gambar 3</p>
+        </div>
+
+        <div class="card">
+            <img src="foto/gambar4.jpeg">
+            <p>Gambar 4</p>
+        </div>
+
+        <div class="card">
+            <img src="foto/gambar5.jpeg">
+            <p>Gambar 5</p>
+        </div>
+
+        <div class="card">
+            <img src="foto/gambar6.jpeg">
+            <p>Gambar 6</p>
+        </div>
+    </div>
+
+    <hr>
+
+    <p><b>Kesimpulan:</b> Tampilan galeri dengan grid dan card membuat website lebih modern, responsif, dan menarik.</p>
+    <p><b>Aurellia Zabrina Putri - 253307042</b></p>
+</article>
+
+</div>
+
+<footer>
+    <p>© 2026 Aurellia</p>
+</footer>
+
+</body>
+</html>

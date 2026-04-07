@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jam Digital Modern</title>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: white;
+            transition: 0.5s;
+        }
+
+        .light-mode {
+            background: linear-gradient(135deg, #e0eafc, #cfdef3);
+            color: #333;
+        }
+
+        .clock-container {
+            text-align: center;
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            background: rgba(255,255,255,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            animation: fadeIn 1s ease;
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0; transform: scale(0.9);}
+            to {opacity: 1; transform: scale(1);}
+        }
+
+        #tanggal {
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            color: #00d2ff;
+        }
+
+        #jam {
+            font-size: 4.5rem;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+
+        .detik {
+            font-size: 2rem;
+            opacity: 0.7;
+        }
+
+        #greeting {
+            margin-top: 10px;
+            font-size: 1.2rem;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            background: #00d2ff;
+            color: black;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background: #00a8cc;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="clock-container">
+    <div id="tanggal"></div>
+    <div id="jam">00:00:<span class="detik">00</span></div>
+    <div id="greeting"></div>
+
+    <button onclick="toggleMode()">Ganti Mode 🌗</button>
+</div>
+
+<script>
+    function updateWaktu() {
+        const now = new Date();
+
+        const opsiTanggal = {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        };
+
+        const tanggal = now.toLocaleDateString('id-ID', opsiTanggal);
+
+        let jam = String(now.getHours()).padStart(2, '0');
+        let menit = String(now.getMinutes()).padStart(2, '0');
+        let detik = String(now.getSeconds()).padStart(2, '0');
+
+        document.getElementById("tanggal").innerHTML = tanggal;
+        document.getElementById("jam").innerHTML = 
+            `${jam}:${menit}:<span class="detik">${detik}</span>`;
+
+        // Greeting otomatis
+        let greeting = "";
+        let hour = now.getHours();
+
+        if (hour < 12) greeting = "Selamat Pagi 🌅";
+        else if (hour < 15) greeting = "Selamat Siang ☀️";
+        else if (hour < 18) greeting = "Selamat Sore 🌇";
+        else greeting = "Selamat Malam 🌙";
+
+        document.getElementById("greeting").innerHTML = greeting;
+    }
+
+    setInterval(updateWaktu, 1000);
+    updateWaktu();
+
+    // Toggle Dark / Light Mode
+    function toggleMode() {
+        document.body.classList.toggle("light-mode");
+    }
+</script>
+
+</body>
+</html>

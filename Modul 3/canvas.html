@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Halaman Canvas</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #eef2f3;
+        }
+
+        header, footer {
+            background: linear-gradient(45deg, teal, darkcyan);
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        nav {
+            width: 25%;
+            background: white;
+            padding: 15px;
+            min-height: 100vh;
+            box-shadow: 2px 0 8px rgba(0,0,0,0.1);
+        }
+
+        nav ul { list-style: none; padding: 0; }
+        nav ul li { margin: 10px 0; }
+
+        nav a {
+            text-decoration: none;
+            color: black;
+            display: block;
+            padding: 8px;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background: teal;
+            color: white;
+        }
+
+        article {
+            width: 75%;
+            padding: 20px;
+        }
+
+        /* CARD */
+        .card {
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        canvas {
+            background: #222;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+
+        @media(max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            nav, article {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h2>🎮 Halaman Canvas</h2>
+</header>
+
+<div class="container">
+
+<nav>
+    <ul>
+        <li><a href="#"> Home</a></li>
+        <li><a href="#"> Gambar</a></li>
+        <li><a href="#"> Event</a></li>
+        <li><a href="#"> Audio</a></li>
+        <li><a href="#"> Video</a></li>
+        <li><a href="#"> SVG</a></li>
+        <li><a href="#"> Canvas</a></li>
+    </ul>
+</nav>
+
+<article>
+
+<h2>Canvas Interaktif</h2>
+
+<div class="card">
+    <canvas id="canvas" width="400" height="300"></canvas>
+</div>
+
+<hr>
+
+<p><b>Kesimpulan:</b> Canvas digunakan untuk menggambar grafik menggunakan JavaScript dan cocok untuk animasi maupun game.</p>
+<p><b>Aurellia Zabrina Putri - 253307042</b></p>
+
+</article>
+
+</div>
+
+<footer>
+    <p>© 2026 Aurellia</p>
+</footer>
+
+<script>
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+
+let x = 50;
+let y = 150;
+let dx = 2;
+
+// Animasi bola
+function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    ctx.beginPath();
+    ctx.arc(x, y, 20, 0, Math.PI * 2);
+    ctx.fillStyle = "cyan";
+    ctx.fill();
+    ctx.closePath();
+
+    x += dx;
+
+    if (x > canvas.width - 20 || x < 20) {
+        dx = -dx;
+    }
+
+    requestAnimationFrame(draw);
+}
+
+draw();
+</script>
+
+</body>
+</html>

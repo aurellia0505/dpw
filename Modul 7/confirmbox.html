@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modern Confirm Box</title>
+
+<style>
+    * { box-sizing: border-box; }
+
+    body {
+        font-family: 'Segoe UI', sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        background: linear-gradient(135deg, #74ebd5, #9face6);
+    }
+
+    h2 {
+        color: white;
+    }
+
+    /* Tombol utama */
+    .btn-trigger {
+        padding: 12px 25px;
+        font-size: 16px;
+        background: linear-gradient(45deg, #007bff, #00c6ff);
+        color: white;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.3s;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .btn-trigger:hover {
+        transform: scale(1.05);
+    }
+
+    /* Overlay */
+    .overlay {
+        display: none;
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: rgba(0,0,0,0.5);
+        backdrop-filter: blur(5px);
+        z-index: 1000;
+    }
+
+    /* Box */
+    .confirm-box {
+        position: absolute;
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%) scale(0.8);
+        background: white;
+        width: 340px;
+        padding: 25px;
+        border-radius: 15px;
+        text-align: center;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        animation: popUp 0.3s ease forwards;
+    }
+
+    @keyframes popUp {
+        to {
+            transform: translate(-50%, -50%) scale(1);
+        }
+    }
+
+    .icon {
+        font-size: 40px;
+        margin-bottom: 10px;
+    }
+
+    .confirm-box h3 {
+        margin: 10px 0;
+    }
+
+    .confirm-box p {
+        color: #666;
+    }
+
+    /* Tombol */
+    .btn-group {
+        display: flex;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .btn {
+        flex: 1;
+        padding: 10px;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .btn-ok {
+        background: #e74c3c;
+        color: white;
+    }
+
+    .btn-cancel {
+        background: #ecf0f1;
+    }
+
+    .btn:hover {
+        transform: scale(1.05);
+    }
+
+    #demo {
+        margin-top: 20px;
+        color: white;
+        font-weight: bold;
+    }
+</style>
+</head>
+
+<body>
+
+<h2>✨ Modern Confirm Box</h2>
+<button class="btn-trigger" onclick="showConfirm()">Klik Logout</button>
+<p id="demo"></p>
+
+<div id="confirmOverlay" class="overlay">
+    <div class="confirm-box">
+        <div class="icon">⚠️</div>
+        <h3>Konfirmasi Logout</h3>
+        <p>Apakah Anda yakin ingin keluar?</p>
+
+        <div class="btn-group">
+            <button class="btn btn-cancel" onclick="handleChoice(false)">Batal</button>
+            <button class="btn btn-ok" onclick="handleChoice(true)">Logout</button>
+        </div>
+    </div>
+</div>
+
+<script>
+function showConfirm() {
+    document.getElementById("confirmOverlay").style.display = "block";
+}
+
+function handleChoice(isOk) {
+    let txt;
+
+    if (isOk) {
+        txt = "✅ Anda berhasil logout!";
+    } else {
+        txt = "❌ Aksi dibatalkan.";
+    }
+
+    document.getElementById("demo").innerHTML = txt;
+    document.getElementById("confirmOverlay").style.display = "none";
+}
+</script>
+
+</body>
+</html>

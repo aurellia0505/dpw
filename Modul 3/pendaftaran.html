@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Halaman Pendaftaran</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #eef2f3;
+        }
+
+        header, footer {
+            background: linear-gradient(45deg, teal, darkcyan);
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        nav {
+            width: 25%;
+            background: white;
+            padding: 15px;
+            min-height: 100vh;
+            box-shadow: 2px 0 8px rgba(0,0,0,0.1);
+        }
+
+        nav ul { list-style: none; padding: 0; }
+        nav ul li { margin: 10px 0; }
+
+        nav a {
+            text-decoration: none;
+            color: black;
+            display: block;
+            padding: 8px;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background: teal;
+            color: white;
+        }
+
+        article {
+            width: 75%;
+            padding: 20px;
+        }
+
+        /* CARD FORM */
+        .form-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        fieldset {
+            border: none;
+            margin-bottom: 20px;
+        }
+
+        legend {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: teal;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: teal;
+        }
+
+        .range-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+        }
+
+        button {
+            background: teal;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: darkcyan;
+        }
+
+        @media(max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            nav, article {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h2>📝 Form Pendaftaran</h2>
+</header>
+
+<div class="container">
+
+<nav>
+    <ul>
+        <li><a href="#"> Home</a></li>
+        <li><a href="#"> Gambar</a></li>
+        <li><a href="#"> Event</a></li>
+        <li><a href="#"> Audio</a></li>
+        <li><a href="#"> Video</a></li>
+        <li><a href="#"> SVG</a></li>
+        <li><a href="#"> Canvas</a></li>
+        <li><a href="#"> Pendaftaran</a></li>
+    </ul>
+</nav>
+
+<article>
+
+<h2>Form Penjadwal Pertemuan</h2>
+
+<div class="form-card">
+<form>
+
+<fieldset>
+    <legend>Informasi Pribadi</legend>
+
+    <label>Nama</label>
+    <input type="text" required>
+
+    <label>No. Telepon</label>
+    <input type="tel" placeholder="0812-123456" required>
+
+    <label>Email</label>
+    <input type="email" placeholder="nama@email.com" required>
+
+    <label>Tanggal Lahir</label>
+    <input type="date" required>
+</fieldset>
+
+<fieldset>
+    <legend>Permintaan Pertemuan</legend>
+
+    <label>Tujuan</label>
+    <input type="text" required>
+
+    <label>Tingkat Kepentingan</label>
+    <input type="range" min="0" max="10">
+    <div class="range-label">
+        <span>Tidak penting</span>
+        <span>Mendesak</span>
+    </div>
+
+    <label>Tanggal</label>
+    <input type="date" id="tgl_temu" required>
+
+    <label>Waktu</label>
+    <input type="time" required>
+</fieldset>
+
+<button type="submit">Kirim</button>
+
+</form>
+</div>
+
+<hr>
+
+<p><b>Kesimpulan:</b> Form HTML5 mempermudah input data dengan validasi otomatis sehingga lebih praktis dan user-friendly.</p>
+
+<p><b>Aurellia Zabrina Putri - 253307042</b></p>
+
+</article>
+
+</div>
+
+<footer>
+    <p>© 2026 Aurellia</p>
+</footer>
+
+<script>
+let today = new Date();
+today.setDate(today.getDate() + 1);
+let minDate = today.toISOString().split("T")[0];
+document.getElementById("tgl_temu").min = minDate;
+</script>
+
+</body>
+</html>

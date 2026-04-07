@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Belajar Pseudo-element</title>
+
+<style>
+    * { box-sizing: border-box; }
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background: #eef2f3;
+        padding: 20px;
+    }
+
+    .container {
+        max-width: 700px;
+        margin: auto;
+    }
+
+    .card {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+
+    h3 {
+        text-align: center;
+    }
+
+    /* Pseudo-element first-line */
+    p::first-line {
+        background-color: lightgoldenrodyellow;
+        font-weight: bold;
+    }
+
+    /* Pseudo-element first-letter */
+    p::first-letter {
+        font-size: 30px;
+        color: teal;
+        font-weight: bold;
+    }
+
+    /* Menambahkan teks sebelum paragraf */
+    p::before {
+        content: "📌 ";
+    }
+
+    /* Menambahkan teks setelah paragraf */
+    p::after {
+        content: " ✨";
+        color: gray;
+    }
+
+    .kesimpulan {
+        margin-top: 15px;
+        padding: 10px;
+        background: #f9f9f9;
+        border-left: 5px solid teal;
+        border-radius: 5px;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="card">
+
+        <h3>✨ Mengenal Chat GPT</h3>
+
+        <p>
+            Belakangan nama Chat GPT menjadi perbincangan netizen, soal platform chat 
+            yang memanfaatkan kecanggihan Artificial Intelligence (AI). 
+            Namun tak sedikit pula dari orang-orang yang penasaran bagaimana cara menggunakan Chat GPT. 
+            Bagi yang belum tahu, platform ini mirip seperti chatbot yang dikembangkan oleh OpenAI.
+        </p>
+
+        <div class="kesimpulan">
+            <b>Pseudo-element yang digunakan:</b><br>
+            ::first-line → memberi style pada baris pertama<br>
+            ::first-letter → memperbesar huruf pertama<br>
+            ::before → menambahkan teks di awal<br>
+            ::after → menambahkan teks di akhir
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
