@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Image Map</title>
+
+<style>
+body { font-family: Arial; margin: 0; }
+
+#header, #footer {
+    background: teal;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+#main { display: flex; }
+
+#link {
+    width: 25%;
+    background: #f0f0f0;
+    padding: 10px;
+}
+
+#content {
+    width: 75%;
+    padding: 15px;
+}
+
+img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+a:hover {
+    color: red;
+}
+</style>
+</head>
+
+<body>
+
+<div id="header">
+    <h1>Tutorial Image Map</h1>
+</div>
+
+<div id="main">
+
+<div id="link">
+    <ul>
+        <li><a href="#">London</a></li>
+        <li><a href="#">Paris</a></li>
+        <li><a href="#">Tokyo</a></li>
+    </ul>
+</div>
+
+<div id="content">
+    <h3>Klik bagian gambar:</h3>
+    <p>Pilih area komputer, handphone, atau kopi.</p>
+
+    <img src="Gambar/bear putcokl.jpg" usemap="#petagambar" alt="Gambar">
+
+    <map name="petagambar">
+        <area shape="rect" coords="34,44,270,350" 
+              href="https://en.wikipedia.org/wiki/Computer" 
+              alt="Computer" target="_blank">
+
+        <area shape="rect" coords="290,172,333,250" 
+              href="https://en.wikipedia.org/wiki/Telephone" 
+              alt="Phone" target="_blank">
+
+        <area shape="circle" coords="337,300,44" 
+              href="https://en.wikipedia.org/wiki/Coffee" 
+              alt="Coffee" target="_blank">
+    </map>
+
+    <p><b>Keterangan:</b> Image map digunakan untuk membuat area klik pada gambar.</p>
+
+    <p><b>Aurellia Zabrina Putri - 253307042</b></p>
+</div>
+
+</div>
+
+<div id="footer">
+    <i>copyright@Aurellia</i>
+</div>
+
+</body>
+</html>

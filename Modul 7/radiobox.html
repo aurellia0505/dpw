@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Musik Favorit</title>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #74ebd5, #acb6e5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            width: 350px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        label {
+            padding: 8px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        label:hover {
+            background: #f1f1f1;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+            accent-color: #2ecc71;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 8px;
+            border: 2px solid #ddd;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 15px;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background: #4a90e2;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background: #357abd;
+        }
+
+        /* CONFIRM BOX */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5);
+        }
+
+        .confirm-box {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            width: 280px;
+            text-align: center;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .ok { background: #2ecc71; color: white; }
+        .cancel { background: #ddd; }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Pilih Musik Favorit </h2>
+
+    <form name="formtes">
+        <div class="radio-group">
+            <label><input type="radio" name="musik" value="Jazz" onclick="info()"> Jazz</label>
+            <label><input type="radio" name="musik" value="Keroncong" onclick="info()"> Keroncong</label>
+            <label><input type="radio" name="musik" value="Dangdut" onclick="info()"> Dangdut</label>
+            <label><input type="radio" name="musik" value="Lainnya" onclick="info()"> Lainnya</label>
+        </div>
+
+        <input type="text" name="hasil" readonly placeholder="Belum memilih">
+
+        <button type="button" onclick="cekPilihan()">Kirim</button>
+    </form>
+</div>
+
+<!-- CONFIRM -->
+<div id="overlay" class="overlay">
+    <div class="confirm-box">
+        <h3>Konfirmasi</h3>
+        <p id="teks"></p>
+
+        <div class="btn-group">
+            <button class="btn cancel" onclick="pilih(false)">Batal</button>
+            <button class="btn ok" onclick="pilih(true)">OK</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function info() {
+        let radios = document.formtes.musik;
+        for (let i = 0; i < radios.length; i++) {
+            if (radios[i].checked) {
+                document.formtes.hasil.value = "Anda memilih " + radios[i].value;
+            }
+        }
+    }
+
+    function cekPilihan() {
+        let radios = document.formtes.musik;
+        let pilih = "";
+
+        for (let i = 0; i < radios.length; i++) {
+            if (radios[i].checked) {
+                pilih = radios[i].value;
+            }
+        }
+
+        if (pilih === "") {
+            alert("Silakan pilih musik terlebih dahulu!");
+            return;
+        }
+
+        document.getElementById("teks").innerHTML = 
+            "Anda memilih " + pilih + ". Lanjutkan?";
+        document.getElementById("overlay").style.display = "block";
+    }
+
+    function pilih(setuju) {
+        if (setuju) {
+            alert("Data berhasil dikirim 🎉");
+        }
+
+        document.getElementById("overlay").style.display = "none";
+    }
+</script>
+
+</body>
+</html>

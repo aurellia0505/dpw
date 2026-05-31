@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Div dan Span</title>
+    <link rel="icon" type="image/png" href="gambar/icon.png" sizes="16x16" />
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+        }
+
+        #header {
+            background-color: teal;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 24px;
+        }
+
+        #main {
+            display: flex;
+        }
+
+        #link {
+            width: 25%;
+            background-color: #e0f7fa;
+            padding: 15px;
+        }
+
+        #link a {
+            display: block;
+            margin: 10px 0;
+            text-decoration: none;
+            color: black;
+            background-color: white;
+            padding: 8px;
+            border-radius: 5px;
+        }
+
+        #link a:hover {
+            background-color: teal;
+            color: white;
+        }
+
+        #content {
+            width: 75%;
+            padding: 20px;
+            background-color: white;
+        }
+
+        #footer {
+            background-color: teal;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="header">
+        Website Sederhana
+    </div>
+
+    <div id="main"> 
+        
+        <div id="link">
+            <h3>Menu</h3>
+            <a href="#">Home</a>
+            <a href="#">Profil</a>
+            <a href="#">Galeri</a>
+            <a href="#">Kontak</a>
+        </div>
+
+        <div id="content">
+            <h2>Selamat Datang</h2>
+            <p>Ini adalah contoh tampilan website sederhana menggunakan <b>div</b> dan <b>span</b>.</p>
+            <p>Layout ini terdiri dari header, menu samping, konten utama, dan footer.</p>
+        </div>
+
+    </div>
+
+    <div id="footer">
+        &copy; 2026 Website Saya
+    </div>
+
+</body>
+</html>

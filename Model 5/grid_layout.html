@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Belajar CSS Grid</title>
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #eef2f3;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    /* CARD */
+    .card {
+      background: white;
+      margin: 20px auto;
+      padding: 20px;
+      width: 85%;
+      border-radius: 12px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+
+    /* GRID DASAR */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      background: linear-gradient(45deg, #2196f3, #21cbf3);
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    /* ITEM */
+    .item {
+      background: rgba(255,255,255,0.9);
+      padding: 20px;
+      font-size: 25px;
+      text-align: center;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+
+    .item:hover {
+      transform: scale(1.1);
+      background: white;
+    }
+
+    /* VARIASI */
+    .inline-grid {
+      display: inline-grid;
+    }
+
+    .gap-besar {
+      gap: 40px;
+    }
+
+    .gap-khusus {
+      column-gap: 10px;
+      row-gap: 40px;
+    }
+
+    /* KESIMPULAN */
+    .kesimpulan {
+      margin-top: 15px;
+      background: #f9f9f9;
+      padding: 10px;
+      border-left: 5px solid teal;
+      border-radius: 6px;
+    }
+
+    @media(max-width: 600px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+<h1>✨ Belajar CSS Grid</h1>
+
+<!-- SKENARIO 1 -->
+<div class="card">
+  <h2>Skenario 1</h2>
+  <div class="grid">
+    <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+    <div class="item">4</div><div class="item">5</div><div class="item">6</div>
+    <div class="item">7</div><div class="item">8</div><div class="item">9</div>
+  </div>
+  <div class="kesimpulan">
+    display:grid digunakan untuk membuat layout berbentuk baris dan kolom.
+  </div>
+</div>
+
+<!-- SKENARIO 2 -->
+<div class="card">
+  <h2>Skenario 2</h2>
+  <div class="grid inline-grid">
+    <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+    <div class="item">4</div><div class="item">5</div><div class="item">6</div>
+    <div class="item">7</div><div class="item">8</div><div class="item">9</div>
+  </div>
+  <div class="kesimpulan">
+    inline-grid hanya mengambil lebar sesuai isi kontennya.
+  </div>
+</div>
+
+<!-- SKENARIO 3 -->
+<div class="card">
+  <h2>Skenario 3</h2>
+  <div class="grid gap-khusus">
+    <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+    <div class="item">4</div><div class="item">5</div><div class="item">6</div>
+    <div class="item">7</div><div class="item">8</div><div class="item">9</div>
+  </div>
+  <div class="kesimpulan">
+    column-gap dan row-gap mengatur jarak antar kolom dan baris.
+  </div>
+</div>
+
+<!-- SKENARIO 4 -->
+<div class="card">
+  <h2>Skenario 4</h2>
+  <div class="grid gap-besar">
+    <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+    <div class="item">4</div><div class="item">5</div><div class="item">6</div>
+    <div class="item">7</div><div class="item">8</div><div class="item">9</div>
+  </div>
+  <div class="kesimpulan">
+    grid-gap adalah cara singkat untuk mengatur jarak baris dan kolom sekaligus.
+  </div>
+</div>
+
+</body>
+</html>

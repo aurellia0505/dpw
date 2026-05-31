@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Belajar Simple Selector</title>
+
+<style>
+    * { box-sizing: border-box; }
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background: #eef2f3;
+        padding: 20px;
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: auto;
+    }
+
+    /* CARD */
+    .card {
+        background: white;
+        padding: 15px;
+        margin-bottom: 15px;
+        border-radius: 10px;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        transition: 0.3s;
+    }
+
+    .card:hover {
+        transform: scale(1.02);
+    }
+
+    /* Semua <p> */
+    p {
+        text-align: center;
+        color: #333;
+        padding: 10px;
+        margin: 0;
+    }
+
+    /* ID selector */
+    #kalimat {
+        color: red;
+        background: #ffe5e5;
+        border-left: 5px solid red;
+    }
+
+    /* Class selector */
+    .center {
+        color: chocolate;
+        background: #fff3e0;
+        border-left: 5px solid chocolate;
+    }
+
+    /* Selector spesifik */
+    p.tengah {
+        background: #444;
+        color: white;
+        border-left: 5px solid black;
+    }
+</style>
+</head>
+
+<body>
+
+<h2>✨ Belajar CSS Simple Selector</h2>
+
+<div class="container">
+
+    <div class="card">
+        <p>
+            Penggunaan CSS sangat membantu web designer dalam menyusun halaman 
+            yang konsisten pada proyek pembuatan halaman web.
+        </p>
+    </div>
+
+    <div class="card">
+        <p id="kalimat">
+            Dalam penulisan CSS sangat sederhana namun powerful dalam desain.
+        </p>
+    </div>
+
+    <div class="card">
+        <p class="center">
+            CSS mempunyai sifat pewarisan secara default, style anak akan 
+            mewarisi style dari parent kecuali anak mendeskripsikan stylenya sendiri.
+        </p>
+    </div>
+
+    <div class="card">
+        <p class="tengah">
+            Ini adalah hasil selector dengan elemen p dengan class tengah.
+        </p>
+    </div>
+
+</div>
+
+</body>
+</html>

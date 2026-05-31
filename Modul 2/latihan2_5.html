@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Style</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div id="header">
+        <h1>Warna, Font, dan Posisi</h1>
+    </div>
+
+    <div id="main">
+        <div id="link">
+            <ul>
+                <li><a href="#">London</a></li>
+                <li><a href="#">Paris</a></li>
+                <li><a href="#">Tokyo</a></li>
+            </ul>
+        </div>
+
+        <div id="content">
+            <!--style warna latar-->
+            <h1 style="background-color: darkkhaki;">DARK KHAKI</h1>
+            <p style="background-color: beige;">BEIGE</p>
+
+            <!--style warna objek-->
+            <h1 style="color: darkgray;">Dark grey</h1>
+            <p style="color:goldenrod;">Golden Rod</p>
+
+            <!--style font-->
+            <h1 style="font-family: Verdana, Geneva, Tahoma, sans-serif ;">Tipe Font Verdana</h1>
+            <p style="font-family: 'Courier New', Courier, monospace;">Tipe font courier/monospace</p>
+
+            <!--style ukuran font-->
+            <h1 style="font-size: 150%;">Ukuran Font 150%</h1>
+            <p style="font-size: 78%;">Ukuran Font 78%</p>
+
+            <!--style posisi objek-->
+            <h1 style="text-align: center;">Posisi heading di tengah</h1>
+            <p style="text-align: right;">Posisi teks dari kanan</p>
+
+            <p>Cara menggunakan style warna dengan nama "Tomato":</p>
+            <h1 style="background-color: tomato;">Tomato</h1>
+
+            <p>Cara menggunakan warna style dengan rgb, hex, dan hsl dengan nilai yang sama dengan tomato:</p>
+            <h1 style="background-color: rgb(255, 99, 71);"> RGB (255, 99, 71)</h1>
+            <h1 style="background-color: #ff6347;"> HEX #ff6347 </h1>
+            <h1 style="background-color: hsl(9, 100%, 64%);"> HSL (9, 100%, 64%)</h1>
+
+            <p>Menggunakan "Tomat0", dengan tingkat transparasi 50%</p>
+            <h1 style="background-color: rgba (255, 99, 71, 0.5);">RGBA (255, 99, 71, 0.5)</h1>
+            <h1 style="background-color: hsla(9, 100%, 64%, 0.5);">HSLA (9, 100%, 64%, 0.5)</h1>
+
+            <p>Selain nama warna yang telah ditentukans sebelumnya, warna dapat ditentukan menggunakan RGB, HEX, HSL atau bahkan warna transparan menggunakan RGBA atau HSLA</p>
+
+            <p>Nama: <b>Aurellia Zabrina Putri</b></p><br>
+            <p>NIM: <b>253307042</b></p>
+        </div>
+    </div>
+
+    <div id="footer">
+        <p><i>copyright@Aurellia_253307042</i></p>
+    </div>
+</body><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Style</title>
+
+<style>
+body {
+    font-family: Arial;
+    margin: 0;
+}
+
+#header, #footer {
+    background: teal;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+#main {
+    display: flex;
+}
+
+#link {
+    width: 25%;
+    background: #f0f0f0;
+    padding: 10px;
+}
+
+#content {
+    width: 75%;
+    padding: 15px;
+}
+
+/* Style */
+.bg1 { background: darkkhaki; }
+.bg2 { background: beige; }
+
+.c1 { color: darkgray; }
+.c2 { color: goldenrod; }
+
+.f1 { font-family: Verdana; }
+.f2 { font-family: Courier; }
+
+.s1 { font-size: 150%; }
+.s2 { font-size: 80%; }
+
+.center { text-align: center; }
+.right { text-align: right; }
+
+.tomato { background: tomato; }
+.rgb { background: rgb(255,99,71); }
+.hex { background: #ff6347; }
+.hsl { background: hsl(9,100%,64%); }
+
+.rgba { background: rgba(255,99,71,0.5); }
+.hsla { background: hsla(9,100%,64%,0.5); }
+
+.box { padding: 5px; margin: 5px 0; }
+</style>
+
+</head>
+
+<body>
+
+<div id="header">
+    <h1>Warna, Font, dan Posisi</h1>
+</div>
+
+<div id="main">
+
+<div id="link">
+    <ul>
+        <li><a href="#">London</a></li>
+        <li><a href="#">Paris</a></li>
+        <li><a href="#">Tokyo</a></li>
+    </ul>
+</div>
+
+<div id="content">
+
+<h3>Background</h3>
+<h2 class="bg1 box">Dark Khaki</h2>
+<p class="bg2 box">Beige</p>
+
+<h3>Warna Teks</h3>
+<h2 class="c1">Dark Grey</h2>
+<p class="c2">Goldenrod</p>
+
+<h3>Font</h3>
+<h2 class="f1">Verdana</h2>
+<p class="f2">Courier</p>
+
+<h3>Ukuran</h3>
+<h2 class="s1">150%</h2>
+<p class="s2">80%</p>
+
+<h3>Posisi</h3>
+<h2 class="center">Tengah</h2>
+<p class="right">Kanan</p>
+
+<h3>Warna Tomato</h3>
+<h2 class="tomato box">Tomato</h2>
+<h2 class="rgb box">RGB</h2>
+<h2 class="hex box">HEX</h2>
+<h2 class="hsl box">HSL</h2>
+
+<h3>Transparansi</h3>
+<h2 class="rgba box">RGBA</h2>
+<h2 class="hsla box">HSLA</h2>
+
+<p><b>Aurellia Zabrina Putri - 253307042</b></p>
+
+</div>
+</div>
+
+<div id="footer">
+    <i>copyright@Aurellia</i>
+</div>
+
+</body>
+</html>
+
+</html>

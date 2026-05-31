@@ -1,0 +1,65 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar Box Model</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #eef2f3;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: teal;
+        }
+
+        /* BOX MODEL */
+        .box {
+            width: 300px;
+            padding: 25px;
+            margin: 30px auto;
+            border: 10px solid green;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .box:hover {
+            transform: scale(1.05);
+        }
+
+        /* GAMBAR */
+        img {
+            width: 500px;
+            height: 350px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Belajar Box Model</h1>
+
+<div class="box">
+    Teks ini berada pada box menggunakan <b>div</b>.<br><br>
+    Box ini memiliki:
+    <ul style="text-align:left;">
+        <li>Padding: 25px</li>
+        <li>Margin: 30px</li>
+        <li>Border: 10px solid hijau</li>
+    </ul>
+</div>
+
+<img src="gambar/KANG TIMPA.jpeg" alt="Gambar">
+
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Progress Modern</title>
+
+    <!-- jQuery UI -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #74ebd5, #9face6);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            width: 320px;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        /* Tombol */
+        #btn-download {
+            padding: 14px 25px;
+            font-size: 16px;
+            background: #4a90e2;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #btn-download:hover {
+            background: #357abd;
+        }
+
+        /* Progress Label */
+        .progress-label {
+            position: absolute;
+            left: 50%;
+            top: 6px;
+            transform: translateX(-50%);
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Progressbar custom */
+        .ui-progressbar {
+            height: 30px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .ui-progressbar-value {
+            background: linear-gradient(90deg, #2ecc71, #27ae60);
+        }
+
+        /* Dialog style */
+        .ui-dialog {
+            border-radius: 12px !important;
+        }
+
+        .ui-dialog-titlebar {
+            background: #4a90e2;
+            color: white;
+            border: none;
+        }
+
+        .ui-dialog-buttonpane button {
+            border-radius: 6px;
+            border: none;
+            padding: 8px 15px;
+            background: #e74c3c;
+            color: white;
+        }
+
+        .ui-dialog-buttonpane button:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>📥 Download Manager</h2>
+    <p>Klik tombol untuk memulai download</p>
+    <button id="btn-download">Mulai Download</button>
+</div>
+
+<!-- Dialog -->
+<div id="dialog-download" title="Sedang Mengunduh...">
+    <div class="progress-label">0%</div>
+    <div id="progressbar"></div>
+</div>
+
+<script>
+$(document).ready(function() {
+
+    var progressbar = $("#progressbar");
+    var progressLabel = $(".progress-label");
+    var dialogDownload = $("#dialog-download");
+    var interval;
+
+    // Dialog
+    dialogDownload.dialog({
+        autoOpen: false,
+        modal: true,
+        resizable: false,
+        closeOnEscape: false,
+        buttons: {
+            "Batal": function() {
+                clearInterval(interval);
+                progressLabel.text("Dibatalkan ❌");
+                progressbar.progressbar("value", 0);
+                $(this).dialog("close");
+            }
+        }
+    });
+
+    // Progressbar
+    progressbar.progressbar({
+        value: 0,
+        change: function() {
+            progressLabel.text(progressbar.progressbar("value") + "%");
+        },
+        complete: function() {
+            progressLabel.text("Download Selesai ✅");
+
+            dialogDownload.dialog("option", "buttons", {
+                "Tutup": function() {
+                    $(this).dialog("close");
+                }
+            });
+        }
+    });
+
+    // Simulasi download
+    function mulaiDownload() {
+        interval = setInterval(function() {
+            var val = progressbar.progressbar("value");
+
+            if (val >= 100) {
+                clearInterval(interval);
+                progressbar.progressbar("value", 100);
+            } else {
+                progressbar.progressbar("value", val + Math.floor(Math.random() * 5) + 1);
+            }
+        }, 100);
+    }
+
+    // Klik tombol
+    $("#btn-download").click(function() {
+        progressbar.progressbar("value", 0);
+        progressLabel.text("Memulai...");
+        dialogDownload.dialog("open");
+        mulaiDownload();
+    });
+
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Style Modern</title>
+<link rel="icon" type="image/png" href="Gambar/kucing malboro.jpg" />
+
+<style>
+  * { box-sizing: border-box; }
+
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #eef2f3;
+  }
+
+  header, footer {
+    background: teal;
+    color: white;
+    text-align: center;
+    padding: 15px;
+  }
+
+  .container {
+    display: flex;
+    min-height: 100vh;
+  }
+
+  /* SIDEBAR */
+  nav {
+    width: 25%;
+    background: white;
+    padding: 15px;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+  }
+
+  nav ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: black;
+    padding: 8px;
+    display: block;
+    border-radius: 6px;
+    transition: 0.3s;
+  }
+
+  nav a:hover {
+    background: teal;
+    color: white;
+  }
+
+  /* CONTENT */
+  .content {
+    width: 75%;
+    padding: 20px;
+  }
+
+  .card {
+    background: white;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  }
+
+  /* STYLE DEMO */
+  .bg-blue { background: powderblue; padding: 10px; border-radius: 6px; }
+  .bg-red { background: tomato; padding: 10px; border-radius: 6px; }
+
+  .text-blue { color: blue; }
+  .text-red { color: red; }
+
+  .verdana { font-family: Verdana; }
+  .courier { font-family: Courier; }
+
+  .big { font-size: 250%; }
+  .medium { font-size: 140%; }
+
+  .center { text-align: center; }
+
+  .card:hover {
+    transform: scale(1.02);
+    transition: 0.3s;
+  }
+
+  @media (max-width: 600px) {
+    .container {
+      flex-direction: column;
+    }
+
+    nav, .content {
+      width: 100%;
+    }
+  }
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>✨ Website Style Modern</h1>
+</header>
+
+<div class="container">
+
+<nav>
+  <ul>
+    <li><a href="#"> London</a></li>
+    <li><a href="#"> Paris</a></li>
+    <li><a href="#"> Tokyo</a></li>
+  </ul>
+</nav>
+
+<div class="content">
+
+  <div class="card">
+    <h2 class="bg-blue">Background Biru</h2>
+    <p class="bg-red">Background Merah</p>
+  </div>
+
+  <div class="card">
+    <h2 class="text-blue">Teks Biru</h2>
+    <p class="text-red">Teks Merah</p>
+  </div>
+
+  <div class="card">
+    <h2 class="verdana">Font Verdana</h2>
+    <p class="courier">Font Courier</p>
+  </div>
+
+  <div class="card">
+    <h2 class="big">Ukuran Besar</h2>
+    <p class="medium">Ukuran Sedang</p>
+  </div>
+
+  <div class="card center">
+    <h2>Teks Tengah</h2>
+    <p>Paragraf Tengah</p>
+  </div>
+
+</div>
+
+</div>
+
+<footer>
+  <p>© 2026 Aurellia Zabrina Putri</p>
+</footer>
+
+</body>
+</html>

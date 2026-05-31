@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Tipe Input HTML</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+    * { box-sizing: border-box; }
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background: #eef2f3;
+    }
+
+    header {
+        background: teal;
+        color: white;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .container {
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    .card {
+        background: white;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+
+    h3 {
+        color: teal;
+    }
+
+    label {
+        display: block;
+        margin-top: 10px;
+    }
+
+    input {
+        padding: 6px;
+        margin-top: 5px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        width: 100%;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"],
+    input[type="range"],
+    input[type="color"],
+    input[type="image"] {
+        width: auto;
+    }
+
+    input[type="button"] {
+        background: teal;
+        color: white;
+        border: none;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+    input[type="button"]:hover {
+        background: darkcyan;
+    }
+
+    .inline {
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+    .kesimpulan {
+        margin-top: 10px;
+        padding: 10px;
+        background: #f9f9f9;
+        border-left: 5px solid teal;
+        border-radius: 5px;
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+    <h2>✨ Uji Coba Tipe Input HTML</h2>
+</header>
+
+<div class="container">
+
+<!-- UJI COBA 1 -->
+<div class="card">
+<h3>Uji coba 1</h3>
+<label>Username:</label>
+<input type="text">
+
+<label>Password:</label>
+<input type="password">
+
+<div class="kesimpulan">Input text dan password digunakan untuk data teks dan sandi.</div>
+</div>
+
+<!-- UJI COBA 2 -->
+<div class="card">
+<h3>Uji coba 2 (Radio)</h3>
+<label class="inline"><input type="radio" name="bahasa"> HTML</label>
+<label class="inline"><input type="radio" name="bahasa"> CSS</label>
+<label class="inline"><input type="radio" name="bahasa"> JavaScript</label>
+
+<div class="kesimpulan">Radio hanya bisa memilih satu pilihan.</div>
+</div>
+
+<!-- UJI COBA 3 -->
+<div class="card">
+<h3>Uji coba 3 (Checkbox)</h3>
+<label><input type="checkbox"> Sepeda</label>
+<label><input type="checkbox"> Mobil</label>
+<label><input type="checkbox"> Kapal</label>
+
+<div class="kesimpulan">Checkbox bisa memilih lebih dari satu pilihan.</div>
+</div>
+
+<!-- UJI COBA 4 -->
+<div class="card">
+<h3>Uji coba 4</h3>
+<label>Pilih warna:</label>
+<input type="color">
+
+<label>Pilih tanggal:</label>
+<input type="date">
+
+<input type="button" value="Klik Saya" onclick="alert('Hello World!')">
+
+<div class="kesimpulan">Input color dan date memudahkan input visual.</div>
+</div>
+
+<!-- UJI COBA 5 -->
+<div class="card">
+<h3>Uji coba 5</h3>
+<label>Datetime:</label>
+<input type="datetime-local">
+
+<label>Bulan:</label>
+<input type="month">
+
+<label>Email:</label>
+<input type="email">
+
+<div class="kesimpulan">Input khusus membantu validasi otomatis.</div>
+</div>
+
+<!-- UJI COBA 6 -->
+<div class="card">
+<h3>Uji coba 6</h3>
+<input type="image" src="gambar/icon.png" width="50">
+
+<label>Pilih file:</label>
+<input type="file">
+
+<input type="hidden" value="123">
+
+<div class="kesimpulan">File untuk upload, hidden untuk data tersembunyi.</div>
+</div>
+
+<!-- UJI COBA 7 -->
+<div class="card">
+<h3>Uji coba 7</h3>
+<label>Number:</label>
+<input type="number" min="1" max="10">
+
+<label>Range:</label>
+<input type="range" min="0" max="50">
+
+<div class="kesimpulan">Number dan range untuk input angka.</div>
+</div>
+
+<!-- UJI COBA 8 -->
+<div class="card">
+<h3>Uji coba 8</h3>
+<label>URL:</label>
+<input type="url">
+
+<label>Search:</label>
+<input type="search">
+
+<label>Telepon:</label>
+<input type="tel" placeholder="0812-xxxxxx">
+
+<div class="kesimpulan">Input ini memiliki format validasi masing-masing.</div>
+</div>
+
+<!-- UJI COBA 9 -->
+<div class="card">
+<h3>Uji coba 9</h3>
+<label>Waktu:</label>
+<input type="time">
+
+<label>Minggu:</label>
+<input type="week">
+
+<div class="kesimpulan">Input time dan week untuk data waktu spesifik.</div>
+</div>
+
+</div>
+
+</body>
+</html>
